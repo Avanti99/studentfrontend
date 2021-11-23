@@ -48,6 +48,8 @@ export class AppComponent {
   }
 
   public onUpdateStudent(student: Student): void {
+    student.id = this.editStudent.id;
+    console.log(student);
     this.studentService.updateStudent(student).subscribe(
       (response: Student) => {
         console.log(response);
